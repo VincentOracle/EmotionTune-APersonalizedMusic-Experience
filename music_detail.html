@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Tune - Song Detail</title>
+    <style>
+        /* CSS styles for the page */
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .song-info {
+            margin-bottom: 20px;
+        }
+        .emotion-tags {
+            margin-bottom: 20px;
+        }
+        .controls button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ song.title }} - {{ song.artist }}</h1>
+
+        <div class="song-info">
+            <p>Album: {{ song.album }}</p>
+            <p>Genre: {{ song.genre }}</p>
+            <p>Release Date: {{ song.release_date }}</p>
+        </div>
+
+        <div class="emotion-tags">
+            <p>Emotions:</p>
+            <ul>
+                {% for emotion in song.emotions %}
+                    <li>{{ emotion }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="controls">
+            <button>Play</button>
+            <button>Add to Playlist</button>
+            <button>Favorite</button>
+        </div>
+
+        <div class="similar-songs">
+            <h2>Similar Songs</h2>
+            <ul>
+                {% for similar_song in song.similar_songs %}
+                    <li>{{ similar_song }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Tune - Homepage</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .nav-bar {
+            background-color: #4682B4;
+            color: white;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+        .section-title {
+            background-color: #4682B4;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .song-list {
+            background-color: #778899;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">Settings</a>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+
+        <div class="section-title">Recommended Songs</div>
+        <div class="song-list">
+            <ul>
+                {% for song in recommended_songs %}
+                    <li>{{ song }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section-title">Recently Played</div>
+        <div class="song-list">
+            <ul>
+                {% for song in recently_played_songs %}
+                    <li>{{ song }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section-title">Emotion Categories</div>
+        <button onclick="displaySongs('happy')">😊</button>
+        <button onclick="displaySongs('sad')">🙁</button>
+        <button onclick="displaySongs('calm')">😌</button>
+        <button onclick="displaySongs('excited')">😮</button>
+
+        <script>
+            function displaySongs(emotion) {
+                // Make an AJAX request to the server to get the songs for the selected emotion
+                // Update the recommended_songs list dynamically using JavaScript
+            }
+        </script>
+    </div>
+</body>
+</html>
