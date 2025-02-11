@@ -1,1 +1,1 @@
-EmotionTune AI personalized Music Experience App
+EmotionTune AI personalized Music Experience Apps
